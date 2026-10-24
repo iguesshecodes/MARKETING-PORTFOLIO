@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Varesh Nirbhavne. Creative and marketing portfolio. Video, 3D, brand and marketing.">
+<title>Varesh Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#fdfbf4;
+    --ink:#0b0b0d;
+    --ink-soft:#56535e;
+    --line:#e6e1d4;
+    --card:#ffffff;
+    --film:#ff3b2e;
+    --d3:#3b57ff;
+    --graphic:#00b874;
+    --brand:#9b4dff;
+    --mkt:#ff9f1c;
+    --pink:#ff2e93;
+    --accent:var(--film);
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#08070a;--ink:#f6f3ea;--ink-soft:#9a96a4;--line:#222028;--card:#121117;color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#08070a;--ink:#f6f3ea;--ink-soft:#9a96a4;--line:#222028;--card:#121117;color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{margin:0}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"Space Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;
+  }
+  /* grain */
+  body::before{content:"";position:fixed;inset:0;z-index:999;pointer-events:none;opacity:.045;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  ::selection{background:var(--accent);color:#fff}
+  ::-webkit-scrollbar{width:11px}
+  ::-webkit-scrollbar-track{background:var(--paper)}
+  ::-webkit-scrollbar-thumb{background:var(--ink);border-radius:20px;border:3px solid var(--paper)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:1280px;margin:0 auto;padding-inline:24px}
+  h1,h2,h3,.disp{font-family:"Bricolage Grotesque","Space Grotesk",sans-serif;font-weight:800;line-height:.92;letter-spacing:-.03em;text-wrap:balance;margin:0}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:100;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+  .logo{font-family:"Bricolage Grotesque";font-weight:800;font-size:22px;letter-spacing:-.04em;display:flex;align-items:center;gap:10px}
+  .logo .dot{width:13px;height:13px;border-radius:50%;background:var(--accent);transition:background .4s;animation:spin 6s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .nav-links{display:flex;align-items:center;gap:28px;font-weight:500;font-size:15px}
+  .nav-links a{position:relative;color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--accent);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .nav-tools{display:flex;align-items:center;gap:13px}
+  .btn{font-family:"Space Grotesk";font-weight:600;font-size:15px;background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:40px;border:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .2s cubic-bezier(.2,.8,.2,1),background .3s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:translateY(0) scale(.97)}
+  .btn.accent{background:var(--accent);color:#fff}
+  .theme-btn{background:transparent;border:1px solid var(--line);color:var(--ink);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:15px;display:grid;place-items:center;transition:border-color .2s,transform .3s}
+  .theme-btn:hover{transform:rotate(25deg);border-color:var(--accent)}
+
+  /* hero */
+  .hero{position:relative;padding:70px 0 30px}
+  .hero .tagrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+  .tag{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--ink-soft);border:1px solid var(--line);padding:8px 15px;border-radius:40px}
+  .tag b{width:8px;height:8px;border-radius:50%;background:var(--graphic);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .hero h1{font-size:clamp(3.1rem,12vw,9.5rem);letter-spacing:-.04em}
+  .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+  .hero h1 .ln>span{display:block;transform:translateY(112%);transition:transform 1s cubic-bezier(.16,1,.3,1)}
+  .loaded .hero h1 .ln>span{transform:translateY(0)}
+  .hero h1 .ln:nth-child(2)>span{transition-delay:.09s}
+  .hero h1 .ln:nth-child(3)>span{transition-delay:.18s}
+  .outline{-webkit-text-stroke:2px var(--ink);color:transparent;transition:-webkit-text-stroke-color .3s}
+  .cycle{color:var(--accent);transition:color .45s;font-style:italic}
+  .hero-foot{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-end;justify-content:space-between;margin-top:42px}
+  .hero-foot p{max-width:42ch;color:var(--ink-soft);font-size:18px;margin:0}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  /* rotating badge */
+  .badge{position:absolute;top:60px;right:24px;width:120px;height:120px;z-index:5}
+  .badge svg{width:100%;height:100%;animation:spin 14s linear infinite}
+  .badge .mid{position:absolute;inset:0;display:grid;place-items:center;font-size:26px;color:var(--accent)}
+  .badge text{font-family:"Space Grotesk";font-size:11.5px;font-weight:600;letter-spacing:.12em;fill:var(--ink)}
+  @media(max-width:760px){.badge{display:none}}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* marquee */
+  .marquee{border-block:2px solid var(--ink);margin-top:46px;overflow:hidden;background:var(--ink);color:var(--paper)}
+  .marquee-track{display:flex;white-space:nowrap;width:max-content;animation:scroll 24s linear infinite}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee-track span{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(1.3rem,3vw,2.1rem);padding:15px 24px;display:inline-flex;align-items:center;gap:24px;letter-spacing:-.02em}
+  .marquee-track span::after{content:"✦";font-size:.65em;color:var(--accent)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  section{padding:92px 0}
+  .shead{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:46px;flex-wrap:wrap}
+  .shead h2{font-size:clamp(2.1rem,6vw,4rem)}
+  .shead .num{font-weight:600;font-size:14px;color:var(--ink-soft);letter-spacing:.1em}
+
+  /* work */
+  .work-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+  .work-card{background:var(--card);border:2px solid var(--ink);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s;box-shadow:0 0 0 rgba(0,0,0,0)}
+  .work-card:hover{transform:translateY(-8px);box-shadow:14px 16px 0 var(--cc)}
+  .c-wide{grid-column:span 4}.c-half{grid-column:span 2}.c-third{grid-column:span 3}
+  .ph{position:relative;aspect-ratio:16/10;overflow:hidden;display:grid;place-items:center;background:
+      radial-gradient(130% 130% at 12% 8%,color-mix(in srgb,var(--cc) 42%,transparent),transparent 55%),var(--card)}
+  .ph::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 18px,color-mix(in srgb,var(--cc) 10%,transparent) 18px 19px)}
+  .ph-label{position:relative;font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(2.4rem,7vw,5rem);color:color-mix(in srgb,var(--cc) 90%,var(--ink));letter-spacing:-.05em;line-height:.85;text-align:center;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+  .work-card:hover .ph-label{transform:scale(1.07) rotate(-2deg)}
+  .slot{position:absolute;top:15px;left:15px;font-size:12px;font-weight:700;background:var(--cc);color:#fff;padding:6px 12px;border-radius:30px;letter-spacing:.02em}
+  .arrow{position:absolute;bottom:15px;right:15px;width:46px;height:46px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:20px;transform:translateY(10px) rotate(-30deg);opacity:0;transition:.45s}
+  .work-card:hover .arrow{transform:none;opacity:1}
+  .work-meta{padding:24px 26px}
+  .work-meta h3{font-size:1.6rem;margin-bottom:8px}
+  .work-meta p{margin:0;color:var(--ink-soft);font-size:15px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+  .chip{font-size:12px;font-weight:600;color:var(--ink-soft);border:1px solid var(--line);padding:4px 11px;border-radius:30px}
+
+  /* lab */
+  .lab{background:var(--ink);color:var(--paper);border-radius:36px;padding:clamp(32px,6vw,72px);position:relative;overflow:hidden}
+  .lab::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-120px;top:-120px;background:radial-gradient(circle,var(--mkt),transparent 65%);opacity:.5;filter:blur(30px)}
+  .lab .shead{position:relative;z-index:1}
+  .lab .shead h2{color:var(--paper)}.lab .shead .num{color:color-mix(in srgb,var(--paper) 55%,transparent)}
+  .lab-intro{position:relative;z-index:1;max-width:54ch;color:color-mix(in srgb,var(--paper) 74%,transparent);margin:-26px 0 44px;font-size:17px}
+  .lab-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .lab-card{border:1px solid color-mix(in srgb,var(--paper) 18%,transparent);border-radius:20px;padding:28px;transition:background .3s,transform .3s,border-color .3s;background:color-mix(in srgb,var(--paper) 3%,transparent)}
+  .lab-card:hover{transform:translateY(-5px);background:color-mix(in srgb,var(--paper) 8%,transparent);border-color:var(--lc)}
+  .lc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px;gap:12px}
+  .lc-kind{font-size:12px;font-weight:600;letter-spacing:.07em;color:color-mix(in srgb,var(--paper) 60%,transparent);text-transform:uppercase}
+  .status{font-size:11px;font-weight:700;letter-spacing:.05em;padding:5px 11px;border-radius:30px;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .status b{width:6px;height:6px;border-radius:50%;background:currentColor;animation:pulse 2s infinite}
+  .status.prog{color:var(--mkt);background:color-mix(in srgb,var(--mkt) 18%,transparent)}
+  .status.soon{color:#5fa8ff;background:color-mix(in srgb,#5fa8ff 18%,transparent)}
+  .lab-card h3{font-size:1.6rem;color:var(--paper);margin-bottom:10px}
+  .lab-card p{margin:0;color:color-mix(in srgb,var(--paper) 70%,transparent);font-size:15px}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:52px;align-items:start}
+  .about-lead{font-family:"Bricolage Grotesque";font-weight:700;font-size:clamp(1.7rem,3.6vw,2.7rem);line-height:1.12;letter-spacing:-.025em}
+  .about-lead em{font-style:italic;color:var(--accent)}
+  .about-body{color:var(--ink-soft);font-size:17px}
+  .about-body p{margin:0 0 16px}
+  .facts{border-top:2px solid var(--ink)}
+  .fact{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .fact span:first-child{color:var(--ink-soft)}
+  .fact span:last-child{font-weight:600;text-align:right}
+
+  /* services */
+  .svc{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+  .svc .s{padding:30px 22px 30px 0;border-bottom:2px solid var(--ink)}
+  .svc .s .n{font-family:"Bricolage Grotesque";font-weight:800;font-size:2.6rem;margin-bottom:12px;letter-spacing:-.03em}
+  .svc .s:nth-child(1) .n{color:var(--film)}.svc .s:nth-child(2) .n{color:var(--d3)}
+  .svc .s:nth-child(3) .n{color:var(--brand)}.svc .s:nth-child(4) .n{color:var(--mkt)}
+  .svc .s h4{margin:0 0 6px;font-size:1.15rem;font-weight:700}
+  .svc .s p{margin:0;color:var(--ink-soft);font-size:14px}
+
+  /* contact */
+  .contact{text-align:center;padding:120px 0 60px}
+  .contact .num{margin-bottom:22px}
+  .contact h2{font-size:clamp(2.7rem,10vw,7.5rem);margin-bottom:30px}
+  .contact h2 a{text-decoration:underline;text-decoration-thickness:5px;text-underline-offset:12px;text-decoration-color:var(--accent);transition:color .3s;font-style:italic}
+  .contact h2 a:hover{color:var(--accent)}
+  .contact-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .copybtn{font-family:"Space Grotesk";font-weight:600;font-size:15px;border:2px solid var(--ink);background:var(--card);color:var(--ink);padding:13px 24px;border-radius:40px;cursor:pointer;transition:background .2s,color .2s,transform .2s;display:inline-flex;gap:9px;align-items:center}
+  .copybtn:hover{transform:translateY(-2px);background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  footer{border-top:2px solid var(--ink);padding:30px 0;padding-bottom:calc(30px + env(safe-area-inset-bottom,0px))}
+  .foot-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;color:var(--ink-soft);font-size:14px}
+  .foot-row .soc{display:flex;gap:22px}
+  .foot-row .soc a:hover,.foot-row .soc span:hover{color:var(--accent)}
+
+  .blob{position:fixed;width:400px;height:400px;border-radius:50%;pointer-events:none;z-index:0;filter:blur(80px);opacity:.45;background:radial-gradient(circle,var(--accent),transparent 68%);transform:translate(-50%,-50%);mix-blend-mode:multiply}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .blob{mix-blend-mode:screen;opacity:.3}}
+  :root[data-theme="dark"] .blob{mix-blend-mode:screen;opacity:.3}
+  main{position:relative;z-index:1}
+
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr;gap:34px}
+    .work-grid{grid-template-columns:repeat(2,1fr)}
+    .c-wide,.c-half,.c-third{grid-column:span 1}
+    .lab-grid{grid-template-columns:1fr}
+    .svc{grid-template-columns:repeat(2,1fr)}
+    .nav-links{display:none}
+  }
+  @media(max-width:520px){
+    .work-grid{grid-template-columns:1fr}
+    .svc{grid-template-columns:1fr}
+    body{font-size:16px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+    .hero h1 .ln>span{transform:none}.reveal{opacity:1;transform:none}.blob{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="blob" id="blob" hidden></div>
+
+<nav>
+  <div class="wrap nav-row">
+    <div class="logo"><span class="dot"></span>Varesh<span style="color:var(--ink-soft);font-weight:500">/studio</span></div>
+    <div class="nav-links">
+      <a href="#work">Work</a><a href="#lab">Marketing Lab</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </div>
+    <div class="nav-tools">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+      <a href="#contact" class="btn accent">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="wrap">
+      <div class="badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+          <text><textPath href="#circ">OPEN FOR WORK • 2026 • OPEN FOR WORK • </textPath></text></svg>
+        <span class="mid">✦</span>
+      </div>
+      <div class="tagrow">
+        <span class="tag"><b></b>Creative & marketing portfolio</span>
+      </div>
+      <h1>
+        <span class="ln"><span>CREATIVE</span></span>
+        <span class="ln"><span class="outline">THAT MOVES</span></span>
+        <span class="ln"><span class="cycle" id="cycle">people.</span></span>
+      </h1>
+      <div class="hero-foot reveal">
+        <p>I am Varesh. Video editor, 3D artist and marketing creative. Six years turning ideas into work people actually stop and watch.</p>
+        <div class="hero-cta">
+          <a href="#work" class="btn">See the work</a>
+          <a href="#lab" class="btn accent">Marketing Lab</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Video Editing</span><span>Filmmaking</span><span>3D Art</span><span>Motion Design</span><span>Brand Identity</span><span>Graphic Design</span><span>Strategy</span><span>SEO</span><span>CRM</span>
+      <span>Video Editing</span><span>Filmmaking</span><span>3D Art</span><span>Motion Design</span><span>Brand Identity</span><span>Graphic Design</span><span>Strategy</span><span>SEO</span><span>CRM</span>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="shead reveal"><h2>Selected work</h2><span class="num">01 / CRAFT</span></div>
+      <div class="work-grid">
+        <div class="work-card c-wide reveal" style="--cc:var(--film)">
+          <div class="ph"><span class="slot">Reel coming soon</span><span class="ph-label">FILM &<br>VIDEO</span><span class="arrow">↗</span></div>
+          <div class="work-meta"><h3>Video & Film</h3><p>Wedding films and brand reels as Creative Lead at Pastel Moments, plus years of freelance edits that cut for feeling first.</p>
+            <div class="chips"><span class="chip">Editing</span><span class="chip">Colour</span><span class="chip">Story</span><span class="chip">Sound</span></div></div>
+        </div>
+        <div class="work-card c-half reveal" style="--cc:var(--d3)">
+          <div class="ph"><span class="slot">Renders soon</span><span class="ph-label">3D</span><span class="arrow">↗</span></div>
+          <div class="work-meta"><h3>3D & Motion</h3><p>Product animation and motion design, built frame by frame since 2021.</p>
+            <div class="chips"><span class="chip">Blender</span><span class="chip">Motion</span></div></div>
+        </div>
+        <div class="work-card c-third reveal" style="--cc:var(--brand)">
+          <div class="ph"><span class="slot">Case study soon</span><span class="ph-label">BRAND</span><span class="arrow">↗</span></div>
+          <div class="work-meta"><h3>Brand, Destyle Apparels</h3><p>The clothing brand I founded and ran, from identity to the way it spoke.</p>
+            <div class="chips"><span class="chip">Identity</span><span class="chip">Founder</span><span class="chip">E-com</span></div></div>
+        </div>
+        <div class="work-card c-third reveal" style="--cc:var(--graphic)">
+          <div class="ph"><span class="slot">Pieces soon</span><span class="ph-label">DESIGN</span><span class="arrow">↗</span></div>
+          <div class="work-meta"><h3>Graphic & Visual Design</h3><p>Posters, social campaigns and layout work that holds a grid and a line.</p>
+            <div class="chips"><span class="chip">Social</span><span class="chip">Layout</span><span class="chip">Type</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lab">
+    <div class="wrap">
+      <div class="lab">
+        <div class="shead"><h2>Marketing Lab</h2><span class="num">02 / IN PROGRESS</span></div>
+        <p class="lab-intro">Where the creative side meets the numbers. Live projects I am building as I move into data and marketing analytics. Real briefs, real data, each one written up in full as it lands.</p>
+        <div class="lab-grid">
+          <div class="lab-card reveal" style="--lc:var(--mkt)">
+            <div class="lc-top"><span class="lc-kind">Retail · Analytics</span><span class="status prog"><b></b>In progress</span></div>
+            <h3>M&S vs Tesco</h3><p>A marketing and data comparison of two UK retail giants. Channel mix, positioning and performance, read side by side.</p>
+          </div>
+          <div class="lab-card reveal" style="--lc:var(--mkt)">
+            <div class="lc-top"><span class="lc-kind">Lifecycle · CRM</span><span class="status prog"><b></b>In progress</span></div>
+            <h3>CRM Project</h3><p>Segmentation, retention and lifecycle messaging. Turning a customer list into a system that keeps people coming back.</p>
+          </div>
+          <div class="lab-card reveal" style="--lc:#5fa8ff">
+            <div class="lc-top"><span class="lc-kind">Search · Growth</span><span class="status soon"><b></b>Coming soon</span></div>
+            <h3>SEO Project</h3><p>Keyword strategy, technical fixes and content built to rank. Measured by traffic that actually converts.</p>
+          </div>
+          <div class="lab-card reveal" style="--lc:#5fa8ff">
+            <div class="lc-top"><span class="lc-kind">Strategy · Audit</span><span class="status soon"><b></b>Coming soon</span></div>
+            <h3>Marketing Audit</h3><p>A full teardown of a brand's marketing, from funnel to creative, with a clear plan for what to fix first.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="shead reveal"><h2>About</h2><span class="num">03 / WHO</span></div>
+      <div class="about-grid">
+        <p class="about-lead reveal">I sit between <em>craft</em> and <em>strategy</em>. I can cut the film, design the brand, then read the data to see if any of it actually worked.</p>
+        <div class="reveal">
+          <div class="about-body">
+            <p>I started as a freelance editor and 3D artist in 2021 and have not stopped making things since. Along the way I built and ran my own clothing brand, Destyle Apparels, and led the creative at Pastel Moments.</p>
+            <p>Now I am finishing an MSc in Marketing at the University of Birmingham and moving into marketing analytics, bringing the creative eye with me.</p>
+          </div>
+          <div class="facts">
+            <div class="fact"><span>Based in</span><span>Birmingham, UK</span></div>
+            <div class="fact"><span>Role</span><span>Creative Lead, Pastel Moments</span></div>
+            <div class="fact"><span>Founder</span><span>Destyle Apparels</span></div>
+            <div class="fact"><span>Studying</span><span>MSc Marketing, UoB</span></div>
+            <div class="fact"><span>Languages</span><span>EN · HI · MR · DE</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="svc">
+        <div class="s reveal"><div class="n">01</div><h4>Film & Video</h4><p>Editing, colour and story for brands and weddings.</p></div>
+        <div class="s reveal"><div class="n">02</div><h4>3D & Motion</h4><p>Product animation and motion design from scratch.</p></div>
+        <div class="s reveal"><div class="n">03</div><h4>Design & Brand</h4><p>Identity, social and visual systems that hold up.</p></div>
+        <div class="s reveal"><div class="n">04</div><h4>Marketing</h4><p>Strategy, SEO, CRM and audits backed by data.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="num reveal">04 / SAY HI</div>
+      <h2 class="reveal">Got a brief?<br>Let's make something<br><a id="mailLink" href="mailto:vareshworks@gmail.com">people remember.</a></h2>
+      <div class="contact-row reveal">
+        <button class="copybtn" id="copyEmail"><span>✦</span><span id="emailTxt">vareshworks@gmail.com</span></button>
+        <a class="copybtn" href="https://www.linkedin.com/in/varesh-nirbhavne-1619a02a3/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-row">
+      <span>© 2026 Varesh Nirbhavne. Built from scratch, in code.</span>
+      <div class="soc"><a href="https://www.linkedin.com/in/varesh-nirbhavne-1619a02a3/" target="_blank" rel="noopener">LinkedIn</a><span id="phone">+91 81040 60003</span></div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var tb=document.getElementById('themeBtn');
+  function cur(){try{return localStorage.getItem('vstudio-theme');}catch(e){return null;}}
+  var saved=cur(); if(saved){root.setAttribute('data-theme',saved);}
+  tb.addEventListener('click',function(){
+    var isDark=getComputedStyle(root).getPropertyValue('color-scheme').indexOf('dark')>-1;
+    var next=isDark?'light':'dark'; root.setAttribute('data-theme',next);
+    try{localStorage.setItem('vstudio-theme',next);}catch(e){}
+  });
+  requestAnimationFrame(function(){document.body.classList.add('loaded');});
+
+  var words=['people.','brands.','scrollers.','clients.','markets.'];
+  var accents=['--film','--d3','--graphic','--brand','--mkt'];
+  var el=document.getElementById('cycle'),i=0;
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!reduce){
+    el.style.transition='opacity .26s ease, transform .26s cubic-bezier(.16,1,.3,1)';
+    setInterval(function(){
+      i=(i+1)%words.length;
+      el.style.opacity=0;el.style.transform='translateY(-30%)';
+      setTimeout(function(){
+        el.textContent=words[i];
+        root.style.setProperty('--accent','var('+accents[i]+')');
+        el.style.transition='none';el.style.transform='translateY(30%)';
+        requestAnimationFrame(function(){el.style.transition='';el.style.opacity=1;el.style.transform='translateY(0)';});
+      },260);
+    },2500);
+  }
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(n){io.observe(n);});
+
+  if(!reduce && window.matchMedia('(hover:hover)').matches){
+    var blob=document.getElementById('blob');blob.hidden=false;
+    var bx=innerWidth/2,by=innerHeight/2,tx=bx,ty=by;
+    addEventListener('pointermove',function(ev){tx=ev.clientX;ty=ev.clientY;});
+    (function loop(){bx+=(tx-bx)*.09;by+=(ty-by)*.09;blob.style.left=bx+'px';blob.style.top=by+'px';requestAnimationFrame(loop);})();
+  }
+
+  var ce=document.getElementById('copyEmail'),et=document.getElementById('emailTxt');
+  ce.addEventListener('click',function(){
+    var mail='vareshworks@gmail.com';
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(mail).then(flash).catch(sel);}else{sel();}
+    function flash(){var o=et.textContent;et.textContent='Copied ✓';setTimeout(function(){et.textContent=o;},1400);}
+    function sel(){var r=document.createRange();r.selectNode(et);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  });
+})();
+</script>
+</body>
+</html>
